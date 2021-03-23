@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 // BG Image
-import bgImage from '../../assets/bg.png';
+import bgImage from '../../assets/bg.jpg';
 
 export const StyledTetrisWrapper = styled.div`
   width: 100vw;
@@ -16,11 +16,14 @@ export const StyledTetris = styled.div`
   padding: 40px;
   margin: 0 auto;
   max-width: 900px;
+  justify-content: center;
+  align-items: center;
 
   aside {
     width: 100%;
     max-width: 200px;
-    display: block;
+    display: flex;
+    flex-direction: column;
     padding: 0 20px;
   }
 `;

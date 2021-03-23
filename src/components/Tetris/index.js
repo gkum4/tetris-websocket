@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 
-import { createStage, checkCollision } from '../gameHelpers';
-import { StyledTetrisWrapper, StyledTetris } from './styles/StyledTetris';
+import { createStage, checkCollision } from '../../gameHelpers';
+import { StyledTetrisWrapper, StyledTetris } from './styles';
 
-import { useInterval } from '../hooks/useInterval';
-import { usePlayer } from '../hooks/usePlayer';
-import { useStage } from '../hooks/useStage';
-import { useGameStatus } from '../hooks/useGameStatus';
+import { useInterval } from '../../hooks/useInterval';
+import { usePlayer } from '../../hooks/usePlayer';
+import { useStage } from '../../hooks/useStage';
+import { useGameStatus } from '../../hooks/useGameStatus';
 
-import Stage from './Stage';
-import Display from './Display';
-import StartButton from './StartButton';
+import Stage from '../Stage';
+import Display from '../Display';
+import StartButton from '../StartButton';
 
 const Tetris = () => {
   const [dropTime, setDropTime] = useState(null);
@@ -100,11 +100,11 @@ const Tetris = () => {
         <Stage stage={stage} />
         <aside>
           {gameOver ? (
-            <Display gameOver={gameOver} text="Game Over" />
+            <Display gameOver={gameOver} text="GAME OVER" />
           ) : (
             <div>
-              <Display text={`Score: ${score}`} />
-              <Display text={`rows: ${rows}`} />
+              <Display text={`Pontos: ${score}`} />
+              <Display text={`Linhas: ${rows}`} />
               <Display text={`Level: ${level}`} />
             </div>
           )}
