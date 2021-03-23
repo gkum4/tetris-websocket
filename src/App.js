@@ -1,13 +1,10 @@
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
-import Routes from './routes';
+import Tetris from './components/Tetris';
 
-const App = () => {
-  return (
-    <Router>
-      <Routes />
-    </Router>
-  );
-}
+const App = () => (
+  <div className="App">
+    <Tetris />
+  </div>
+);
 
 export default App;

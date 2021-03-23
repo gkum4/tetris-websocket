@@ -1,19 +1,13 @@
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   outline: 0;
-  font-family: 'Ranchers', cursive;
 }
 
 body {
-  background: #1E1E1E;
-  color: #EBEBEB;
   -webkit-font-smoothing: antialiased;
-}
-
-div {
-  display: flex;
 }
 
 button {
