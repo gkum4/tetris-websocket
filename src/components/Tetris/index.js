@@ -13,6 +13,8 @@ import Display from '../Display';
 import StartButton from '../StartButton';
 import InstructionsDisplay from '../InstructionsDisplay';
 
+import { w3cwebsocket as W3CWebSocket } from 'websocket';
+
 const Tetris = () => {
   const [dropTime, setDropTime] = useState(null);
   const [gameOver, setGameOver] = useState(false);
@@ -22,6 +24,8 @@ const Tetris = () => {
   const [score, setScore, rows, setRows, level, setLevel] = useGameStatus(
     rowsCleared
   );
+
+  const client = new W3CWebSocket('ws://localhost:8888/');
 
   const movePlayer = dir => {
     if (!checkCollision(player, stage, { x: dir, y: 0 })) {
@@ -101,6 +105,7 @@ const Tetris = () => {
         <aside>
           <div>
             <InstructionsDisplay text={`Pontos: ${score}`} />
+            {/* <button onClick={async () => await client.send('teste comunicação websocket')}>Teste</button> */}
           </div>
         </aside>
         <Stage stage={stage} />
