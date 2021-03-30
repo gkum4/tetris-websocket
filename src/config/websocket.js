@@ -4,11 +4,19 @@ const robot = require("robotjs");
 const wss = new WebSocket.Server({ port: 8888 });
 
 wss.on('connection', function connection(ws) {
+  console.log('websocket server started 🚀');
+  
   ws.on('message', function incoming(message) {
-    if (message === '1') {
+    if (message === 'right') {
       robot.keyTap('right');
+    } else if (message === 'left') {
+      robot.keyTap('left');
+    } else if (message === 'q') {
+      robot.keyTap('q');
+    } else if (message === 'w') {
+      robot.keyTap('w');
+    } else if (message === 'down') {
+      robot.keyTap('down');
     }
   });
 });
-
-console.log('started')

@@ -11,6 +11,7 @@ import { useGameStatus } from '../../hooks/useGameStatus';
 import Stage from '../Stage';
 import Display from '../Display';
 import StartButton from '../StartButton';
+import InstructionsDisplay from '../InstructionsDisplay';
 
 const Tetris = () => {
   const [dropTime, setDropTime] = useState(null);
@@ -82,9 +83,9 @@ const Tetris = () => {
       } else if (keyCode === 40) {
         dropPlayer();
       } else if (keyCode === 81) {
-        playerRotate(stage, 1);
-      } else if (keyCode === 87) {
         playerRotate(stage, -1);
+      } else if (keyCode === 87) {
+        playerRotate(stage, 1);
       }
     }
   };
@@ -97,6 +98,11 @@ const Tetris = () => {
       onKeyUp={keyUp}
     >
       <StyledTetris>
+        <aside>
+          <div>
+            <InstructionsDisplay text={`Pontos: ${score}`} />
+          </div>
+        </aside>
         <Stage stage={stage} />
         <aside>
           {gameOver ? (
