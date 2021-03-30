@@ -12,6 +12,7 @@ export const StyledDisplay = styled.div`
   border-radius: 20px;
   color: ${props => (props.gameOver ? 'red' : '#ededed')};
   background: #000;
+  position: relative;
 `;
 
 export const InstructionsRow = styled.div`
@@ -35,4 +36,21 @@ export const InstructionsRow = styled.div`
     font-family: 'Train One', cursive;
     font-size: 1rem;
   }
+`;
+
+export const ChangeButton = styled.button`
+  display: flex;
+  flex-direction: column;
+  background: purple;
+  color: #eaeaea;
+  position: absolute;
+  bottom: -15px;
+  outline: none;
+  border: none;
+  padding: 7px;
+  border-radius: 8px;
+
+  ${({ hasController }) => hasController && css`
+    background: green;
+  `}
 `;

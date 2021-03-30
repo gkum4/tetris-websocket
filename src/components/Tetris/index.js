@@ -13,19 +13,18 @@ import Display from '../Display';
 import StartButton from '../StartButton';
 import InstructionsDisplay from '../InstructionsDisplay';
 
-import { w3cwebsocket as W3CWebSocket } from 'websocket';
+// import { w3cwebsocket as W3CWebSocket } from 'websocket';
 
 const Tetris = () => {
   const [dropTime, setDropTime] = useState(null);
   const [gameOver, setGameOver] = useState(false);
-
   const [player, updatePlayerPos, resetPlayer, playerRotate] = usePlayer();
   const [stage, setStage, rowsCleared] = useStage(player, resetPlayer);
   const [score, setScore, rows, setRows, level, setLevel] = useGameStatus(
     rowsCleared
   );
 
-  const client = new W3CWebSocket('ws://localhost:8888/');
+  // const client = new W3CWebSocket('ws://localhost:8888/');
 
   const movePlayer = dir => {
     if (!checkCollision(player, stage, { x: dir, y: 0 })) {
