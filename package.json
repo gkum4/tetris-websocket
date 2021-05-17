@@ -12,7 +12,6 @@
     "robotjs": "^0.6.0",
     "styled-components": "^5.2.1",
     "web-vitals": "^1.0.1",
-    "websocket": "^1.0.33",
     "ws": "^7.4.4"
   },
   "scripts": {
