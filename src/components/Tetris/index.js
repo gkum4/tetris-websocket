@@ -89,6 +89,8 @@ const Tetris = () => {
         playerRotate(stage, -1);
       } else if (keyCode === 87) {
         playerRotate(stage, 1);
+      } else if (keyCode === 88) {
+        startGame();
       }
     }
   };
@@ -104,7 +106,7 @@ const Tetris = () => {
         <aside>
           <div>
             <InstructionsDisplay text={`Pontos: ${score}`} />
-            {/* <button onClick={async () => await client.send('teste comunicação websocket')}>Teste</button> */}
+            {/* <button onClick={async () => await client.send('ola')}>Teste</button> */}
           </div>
         </aside>
         <Stage stage={stage} />

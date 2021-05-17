@@ -8,16 +8,18 @@ wss.on('connection', function connection(ws) {
   
   ws.on('message', function incoming(message) {
     console.log(message)
-    if (message === 'right') {
+    if (message === 'btn1') {
       robot.keyTap('right');
-    } else if (message === 'left') {
+    } else if (message === 'btn3') {
       robot.keyTap('left');
-    } else if (message === 'q') {
+    } else if (message === 'l') {
       robot.keyTap('q');
-    } else if (message === 'w') {
+    } else if (message === 'r') {
       robot.keyTap('w');
-    } else if (message === 'down') {
+    } else if (message === 'btn2') {
       robot.keyTap('down');
+    } else if (message === 'btn4') {
+      robot.keyTap('x');
     }
   });
 });
